@@ -1,0 +1,23 @@
+<h1>Edit <%= @restaurant.name %> <h1>
+<form action="/restaurants/<%= @restaurant.id %> " method="post">
+	<input type="hidden" name="_method" value="patch">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" >
+		<label>Name:</label>
+		<input type="text" name="restaurant[name]" value="<%= @restaurant.name %>" >
+	</p>
+	<p>
+		<label>City:</label>
+		<input type="text" name="restaurant[city]" value="<%= @restaurant.city %>">
+	</p>
+	<input type="submit" value="Update">
+	<p>
+		<label>Cuisine:</label>
+		<input type="text" name="restaurant[cuisine]" value="<%= @restaurant.cuisine %>" >
+	</p>
+</form>
+
+<% if flash[:errors] %>
+		<% flash[:errors].each do |e| %>
+		<p><%= e %></p>
+		<% end %>
+	<% end %>

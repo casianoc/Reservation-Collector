@@ -1,0 +1,18 @@
+Rails.application.routes.draw do
+  get "restaurants" => "restaurant#index"
+  get "restaurants/new" => "restaurant#new"
+  post "restaurants" => "restaurant#create"
+  get "reservations" => "reservations#index"
+  get "reservations/new" => "reservations#new"
+  post "reservations" => "reservations#create"
+  get "restaurants/:id" => "restaurant#show"
+  get "reservations/:id" => "reservations#show"
+  get "restaurants/:id/edit" => "restaurant#edit"
+  patch "restaurants/:id" => "restaurant#update"
+  get "reservations/:id/edit" => "reservations#edit"
+  patch "reservations/:id" => "reservations#update"
+  delete "restaurants/:id" => "restaurant#destroy"
+  delete "reservations/:id" => "reservations#destroy"
+  get "books" => "books#index"
+  post "books" => "book#create"
+end

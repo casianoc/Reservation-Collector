@@ -1,0 +1,21 @@
+<h1>View Reservation's<%= pluralize(@restaurants.count, "Restaurant")%></h1>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>City</th>
+			<th>Cuisine</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @restaurants.each do |restaurant| %>
+		<tr>
+			<td><%= restaurant.name %></td>
+			<td><%= restaurant.city %></td>
+			<td><%= restaurant.cuisine %></td>
+		</tr>
+		<% end %>
+		</tbody>
+</table>
+<a href="/restaurants/new">View Restaurants</a>

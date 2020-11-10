@@ -1,0 +1,29 @@
+<h1>View <%= pluralize(@reservations.count, "Reservation")%></h1>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">Date</th>
+			<th scope="col">Time</th>
+			<th scope="col">Name</th>
+			<th scope="col">Number</th>
+			<th scope="col">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @reservations.each do |reservation| %>
+		<tr>
+			<td><%= reservation.date %></td>
+			<td><%= reservation.time %></td>
+			<td><%= reservation.name %></td>
+			<td><%= reservation.number %></td>
+			<td><a href="/reservations/<%= reservation.id %>">Show</a> |
+			<td><a href="/reservations/<%= reservation.id %>/edit">Edit</a> |
+			<td><a href="/reservations/<%= reservation.id %>" data-method="delete"
+				data-confirm="Are you sure?">Delete</a>
+
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<a href="/reservations/new">Create Reservations</a>

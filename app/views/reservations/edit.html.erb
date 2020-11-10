@@ -1,0 +1,27 @@
+<h1>Edit <%= @reservation.number %> <h1>
+<form action="/reservations/<%= @reservation.id %> " method="post">
+	<input type="hidden" name="_method" value="patch">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" >
+		<label>Date:</label>
+		<input type="text" name="reservation[date]" value="<%= @reservation.date %>" >
+	</p>
+	<p>
+		<label>Time:</label>
+		<input type="text" name="reservation[time]" value="<%= @reservation.time %>">
+	</p>
+	<input type="submit" value="Update">
+	<p>
+		<label>Name:</label>
+		<input type="text" name="reservation[name]" value="<%= @reservation.name %>" >
+	</p>
+	<p>
+		<label>Number:</label>
+		<input type="text" name="reservation[number]" value="<%= @reservation.number %>">
+	</p>
+</form>
+
+<% if flash[:errors] %>
+		<% flash[:errors].each do |e| %>
+		<p><%= e %></p>
+		<% end %>
+	<% end %>

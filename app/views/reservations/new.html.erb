@@ -1,0 +1,27 @@
+<h1>Create Reservation<h1>
+<form action="/reservations" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" >
+	<p>
+		<label>Date:</label>
+		<input type="text" name="reservation[date]">
+	</p>
+	<p>
+		<label>Time:</label>
+		<input type="text" name="reservation[time]">
+	</p>
+	<p>
+		<label>Name:</label>
+		<input type="text" name="reservation[name]">
+	</p>
+	<p>
+		<label>Number:</label>
+		<input type="text" name="reservation[number]">
+	</p>
+	<input type="submit" value="Create">
+</form>
+
+<% if flash[:errors] %>
+		<% flash[:errors].each do |e| %>
+		<p><%= e %></p>
+		<% end %>
+	<% end %>
