@@ -1,23 +1,24 @@
 <h1>Edit <%= @restaurant.name %> <h1>
 <form action="/restaurants/<%= @restaurant.id %> " method="post">
 	<input type="hidden" name="_method" value="patch">
-	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" >
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" class="form-control">
+	<div class="form-group">
 		<label>Name:</label>
-		<input type="text" name="restaurant[name]" value="<%= @restaurant.name %>" >
-	</p>
-	<p>
+		<input type="text" name="restaurant[name]" value="<%= @restaurant.name %>" class="form-control">
+	</div>
+	<div class="form-group">
 		<label>City:</label>
-		<input type="text" name="restaurant[city]" value="<%= @restaurant.city %>">
-	</p>
-	<input type="submit" value="Update">
-	<p>
+		<input type="text" name="restaurant[city]" value="<%= @restaurant.city %>" class="form-control">
+	</div>
+	<div class="form-group">
 		<label>Cuisine:</label>
-		<input type="text" name="restaurant[cuisine]" value="<%= @restaurant.cuisine %>" >
-	</p>
+		<input type="text" name="restaurant[cuisine]" value="<%= @restaurant.cuisine %>" class="form-control">
+	</div>
+	<input type="submit" value="Update" class="btn btn-primary">
 </form>
 
 <% if flash[:errors] %>
 		<% flash[:errors].each do |e| %>
-		<p><%= e %></p>
+		<div class="alert alert-primary"><%= e %></div>
 		<% end %>
 	<% end %>

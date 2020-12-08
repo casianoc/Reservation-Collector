@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   delete "restaurants/:id" => "restaurant#destroy"
   delete "reservations/:id" => "reservations#destroy"
   get "books" => "books#index"
-  post "books" => "book#create"
+  post "books" => "books#create"
+  get "books/new" => "books#new"
 end

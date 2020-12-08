@@ -1,0 +1,25 @@
+<h1>Create Book<h1>
+<form action="/books" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" >
+	<p>
+		<label>Restaurant:</label>
+		<select name="book[restaurant_id]" id="restaurant_id">
+			<% @restaurants.each do |restaurant| %>
+			<option value="<%= restaurant.id %>">
+				<%= restaurant.name %> <%= restaurant.city %> <%= restaurant.cuisine %>
+			</option>
+			<% end %>
+		</select>
+	</p>
+	<p>
+		<label>Reservation:</label>
+		<select name="book[reservation_id]" id="reservation_id">
+			<% @reservations.each do |reservation| %>
+			<option value="<%= reservation.id %>">
+				<%= reservation.name %> <%= reservation.number %> <%= reservation.date %> <%= reservation.time %>
+			</option>
+			<% end %>
+		</select>
+	</p>
+	<input type="submit" value="Create">
+</form>

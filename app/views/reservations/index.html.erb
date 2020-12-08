@@ -17,10 +17,9 @@
 			<td><%= reservation.name %></td>
 			<td><%= reservation.number %></td>
 			<td><a href="/reservations/<%= reservation.id %>">Show</a> |
-			<td><a href="/reservations/<%= reservation.id %>/edit">Edit</a> |
-			<td><a href="/reservations/<%= reservation.id %>" data-method="delete"
-				data-confirm="Are you sure?">Delete</a>
-
+				<a href="/reservations/<%= reservation.id %>/edit">Edit</a> |
+				<a href="/reservations/<%= reservation.id %>" data-method="delete"
+					data-confirm="Are you sure?">Delete</a>
 			</td>
 		</tr>
 		<% end %>

@@ -17,7 +17,8 @@ class RestaurantController < ApplicationController
 end
 
 def show 
-	@reservation = Restaurant.find(params[:id]).reservations
+		#@reservation = Restaurant.find(params[:id]).reservations
+		@reservations = Restaurant.find(params[:id]).reservations.where(Reservation.arel_table[:date].gt(Date.today))
 end
 
 def edit 
